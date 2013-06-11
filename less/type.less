@@ -5,7 +5,9 @@
 
 // Body text
 // -------------------------
-
+body {
+  direction: rtl;
+}
 p {
   margin: 0 0 @baseLineHeight / 2;
 }
@@ -104,7 +106,7 @@ h4 small { font-size: @baseFontSize; }
 // Unordered and Ordered lists
 ul, ol {
   padding: 0;
-  margin: 0 0 @baseLineHeight / 2 25px;
+  margin: 0 25px @baseLineHeight / 2 0;
 }
 ul ul,
 ul ol,
@@ -119,14 +121,14 @@ li {
 // Remove default list styles
 ul.unstyled,
 ol.unstyled {
-  margin-left: 0;
+  margin-right: 0;
   list-style: none;
 }
 
 // Single-line list items
 ul.inline,
 ol.inline {
-  margin-left: 0;
+  margin-right: 0;
   list-style: none;
   > li {
     display: inline-block;
@@ -148,20 +150,20 @@ dt {
   font-weight: bold;
 }
 dd {
-  margin-left: @baseLineHeight / 2;
+  margin-right: @baseLineHeight / 2;
 }
 // Horizontal layout (like forms)
 .dl-horizontal {
   .clearfix(); // Ensure dl clears floats if empty dd elements present
   dt {
-    float: left;
+    float: right;
     width: @horizontalComponentOffset - 20;
-    clear: left;
+    clear: right;
     text-align: right;
     .text-overflow();
   }
   dd {
-    margin-left: @horizontalComponentOffset;
+    margin-right: @horizontalComponentOffset;
   }
 }
 
@@ -190,9 +192,9 @@ abbr.initialism {
 
 // Blockquotes
 blockquote {
-  padding: 0 0 0 15px;
+  padding: 0 15px 0 0;
   margin: 0 0 @baseLineHeight;
-  border-left: 5px solid @grayLighter;
+  border-right: 5px solid @grayLighter;
   p {
     margin-bottom: 0;
     font-size: @baseFontSize * 1.25;
@@ -209,15 +211,15 @@ blockquote {
   }
 
   // Float right with text-align: right
-  &.pull-right {
-    float: right;
-    padding-right: 15px;
-    padding-left: 0;
-    border-right: 5px solid @grayLighter;
-    border-left: 0;
+  &.pull-left {
+    float: left;
+    padding-left: 15px;
+    padding-right: 0;
+    border-left: 5px solid @grayLighter;
+    border-right: 0;
     p,
     small {
-      text-align: right;
+      text-align: left;
     }
     small {
       &:before {

@@ -6,20 +6,28 @@
 // Inline and block code styles
 code,
 pre {
-  padding: 0 3px 2px;
+  padding: 0 0 2px 3px;
   #font > #family > .monospace;
   font-size: @baseFontSize - 2;
+  text-align: left;
   color: @grayDark;
   .border-radius(3px);
 }
 
 // Inline code
 code {
-  padding: 2px 4px;
+  display: inline-block;
+  padding: 0 4px;
   color: #d14;
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
   white-space: nowrap;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  code {
+    line-height: @baseLineHeight;
+  }
 }
 
 // Blocks of code
